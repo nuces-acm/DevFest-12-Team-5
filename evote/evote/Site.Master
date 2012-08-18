@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="evote.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .menu
+        {
+            text-align: center;
+        }
+        .menu
+        {
+            text-align: center;
+        }
+        .style1
+        {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1 align="center" class="style1" dir="ltr">
+                    OnlIne Voting System [ Control Panel ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/Add_voter.aspx" Text="Add Voter" Value="Add Voter">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/candidate_add.aspx" Text="Add Candidate" 
+                            Value="Add Candidate"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Voter_list.aspx" Text="Voter List" 
+                            Value="Voter's List"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/candidate_list.aspx" Text="Candidate List" 
+                            Value="Candidate List"></asp:MenuItem>
+                        <asp:MenuItem Text="Search" Value="Search">
+                            <asp:MenuItem Text="Search Candidate" Value="Search Candidate" 
+                                NavigateUrl="~/search_cand.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Search_voter.aspx" Text="Search Voter" 
+                                Value="Search Voter"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/result.aspx" Text="Score Board" Value="Results">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="~/logout.aspx" Text="Log Out" Value="Log Out">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
